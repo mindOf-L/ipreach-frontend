@@ -6,7 +6,7 @@
   "tabWidth": 2,
   "printWidth": 80,
   "tailwindConfig": "./tailwind.config.ts",
-  "tailwindFunctions": ["clsx", "cn", "tw"],
+  "tailwindFunctions": ["clsx", "cn", "tw", "cva", "variant", "size"],
   "tailwindPreserveWhitespace": true,
   "tailwindPreserveDuplicates": false,
   "plugins": ["prettier-plugin-tailwindcss"],

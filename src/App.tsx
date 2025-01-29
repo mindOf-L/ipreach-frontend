@@ -1,10 +1,16 @@
-import { NavLink } from 'react-router'
+import { H1 } from './common/components/H1'
+import { Main } from './common/components/Main'
+import { AppFooter } from './footer/AppFooter'
 
 function App() {
   return (
     <>
-      <h1 className='bg-red-300 text-3xl text-red-500'>iPreach</h1>
-      <NavLink to={''} />
+      <Main className=''>
+        <H1 className='text-center' variant='blue'>
+          iPreach
+        </H1>
+      </Main>
+      <AppFooter />
     </>
   )
 }

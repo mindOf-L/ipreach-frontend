@@ -1,9 +1,9 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query'
-import { Div } from '../../components/common/Div'
-import { Button } from '../../components/common/Button'
+import { Div } from './Div'
+import { Button } from './Button'
 import { ReactNode, useRef } from 'react'
-import { useDetectClickOutside } from './hooks/useDetectClickOutside'
 import { XIcon } from 'lucide-react'
+import { useDetectClickOutside } from '../hooks/useDetectClickOutside'
 
 export const VIEW_MODAL_KEY = 'view-modal'
 export interface ViewModalProps {

@@ -6,16 +6,15 @@ const h1Classes = {
   variants: {
     variant: {
       default: '',
-      colored: '',
+      blue: 'text-sky-700 dark:text-sky-200'
     },
     size: {
-      default: '',
-      sm: '',
+      default: 'text-6xl md:text-7xl xl:text-8xl',
     },
   },
 }
 
-const h1Variants = cva('', {
+const h1Variants = cva('font-bold', {
   ...h1Classes,
   defaultVariants: {
     variant: 'default',

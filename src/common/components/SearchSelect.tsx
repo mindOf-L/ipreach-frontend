@@ -5,12 +5,12 @@ import {
   useRef,
   useState,
 } from 'react'
-import { Input } from './Input'
-import { Ul } from './Ul'
-import { Li } from './Li'
-import { Nav } from './Nav'
-import { useDetectClickOutside } from '../../features/common/hooks/useDetectClickOutside'
+import { Input } from './HTML/Input'
+import { Ul } from './HTML/Ul'
+import { Li } from './HTML/Li'
+import { Nav } from './HTML/Nav'
 import { ChevronDown } from 'lucide-react'
+import { useDetectClickOutside } from '../hooks/useDetectClickOutside'
 
 interface SearchSelectProps {
   onInputChange: (e: ChangeEvent<HTMLInputElement>) => unknown

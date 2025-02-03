@@ -1,6 +1,6 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query'
-import { Div } from './Div'
-import { Button } from './Button'
+import { Div } from './HTML/Div'
+import { Button } from './HTML/Button'
 import { ReactNode, useRef } from 'react'
 import { XIcon } from 'lucide-react'
 import { useDetectClickOutside } from '../hooks/useDetectClickOutside'

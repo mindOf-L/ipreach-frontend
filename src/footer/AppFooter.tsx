@@ -1,9 +1,11 @@
-import { Moon, Sun } from "lucide-react"
-import { Button } from "../common/components/Button"
-import { Footer } from "../common/components/Footer"
-import { isDarkMode, toggleColorSchema } from "../utils/colorSchema"
-import { useState } from "react"
-import { Span } from "../common/components/Span"
+import { Moon, Sun } from 'lucide-react'
+import { Button } from '../common/components/HTML/Button'
+import { Footer } from '../common/components/HTML/Footer'
+import { isDarkMode, toggleColorSchema } from '../utils/colorSchema'
+import { useState } from 'react'
+import { Span } from '../common/components/HTML/Span'
+import { AppText } from '../translation/components/AppText'
+import { FOOTER_ENTRY } from '../translation/tTranslation'
 
 export const AppFooter = () => {
   const [dark, setDark] = useState(isDarkMode())
@@ -12,8 +14,10 @@ export const AppFooter = () => {
     setDark(!dark)
   }
   return (
-    <Footer className="bg-slate-200 dark:bg-slate-800 w-full min-h-16 flex justify-around items-center absolute bottom-0">
-      <Span>iPreach 2025</Span>
+    <Footer className='bottom-0 flex h-[10vh] w-full items-center justify-around bg-slate-200 px-4 dark:bg-slate-800'>
+      <Span size='small' className='flex-1 text-center'>
+        <AppText sentenceKey={FOOTER_ENTRY} />
+      </Span>
       <Button onClick={handleClick}>
         {dark && <Sun />}
         {dark || <Moon />}

@@ -1,16 +1,8 @@
-import { useTranslation } from 'react-i18next'
+import { AppTranslation } from '../tTranslation'
+import { useAppTranslation } from '../hooks/useAppTranslation'
 
-interface AppTextParameters {
-  sentenceKey: string
-  dynamicValues?: {}
-  translationFile?: string
-}
+export const AppText = (translationPrams: AppTranslation) => {
+  const text = useAppTranslation(translationPrams)
 
-export const AppText = ({
-  sentenceKey,
-  dynamicValues = {},
-  translationFile = 'translation',
-}: AppTextParameters) => {
-  const { t } = useTranslation([translationFile])
-  return <>{t(sentenceKey, dynamicValues)}</>
+  return <>{text}</>
 }

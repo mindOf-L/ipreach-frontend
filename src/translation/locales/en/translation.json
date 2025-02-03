@@ -1,0 +1,9 @@
+{
+  "welcome": "Welcome to iPreach, {{name}}",
+  "username-label": "Phone number",
+  "password-label": "Password",
+  "login": "Log in with your phone number",
+  "login-button": "Let's go!",
+  "footer": "iPreach 2025 | All rights reserved",
+  "location-placeholder": "Location"
+}

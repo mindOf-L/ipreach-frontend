@@ -14,7 +14,8 @@ import {
   USERNAME_LABEL_ENTRY,
 } from '../../translation/tTranslation'
 import { useLogin } from '../hooks/useLogin'
-import { Div } from '../../common/components/HTML/Div'
+import { Main } from '../../common/components/HTML/Main'
+import { PasswordToggleInput } from '../../common/components/PasswordToggleInput'
 
 export const LOGIN_ROUTE = '/login'
 
@@ -30,24 +31,26 @@ export const Login = () => {
   const { handleLogin } = useLogin()
 
   return (
-    <Div className='h-[70vh]'>
+    <>
       <Hero />
-      <Form className='mx-auto h-full' onSubmit={handleLogin}>
-        <H3 className='self-start'>
-          <AppText sentenceKey={LOGIN_ENTRY} />
-        </H3>
-        <Label htmlFor='username' className='self-start'>
-          {userLabel}
-        </Label>
-        <Input id='username' name='username' type='text' />
-        <Label htmlFor='password' className='self-start'>
-          {passwordLabel}
-        </Label>
-        <Input id='password' name='password' type='password' />
-        <Button variant='colored'>
-          <AppText sentenceKey={LOGIN_BUTTON_ENTRY} />
-        </Button>
-      </Form>
-    </Div>
+      <Main className='flex flex-col justify-center'>
+        <Form className='mx-auto h-full' onSubmit={handleLogin}>
+          <H3 className='self-start'>
+            <AppText sentenceKey={LOGIN_ENTRY} />
+          </H3>
+          <Label htmlFor='username' className='self-start'>
+            {userLabel}
+          </Label>
+          <Input id='username' name='username' type='text' required />
+          <Label htmlFor='password' className='self-start'>
+            {passwordLabel}
+          </Label>
+          <PasswordToggleInput id='password' name='password' required />
+          <Button variant='colored'>
+            <AppText sentenceKey={LOGIN_BUTTON_ENTRY} />
+          </Button>
+        </Form>
+      </Main>
+    </>
   )
 }

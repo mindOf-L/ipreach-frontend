@@ -3,7 +3,7 @@ import { Header } from '../common/components/HTML/Header'
 
 export const Hero = () => {
   return (
-    <Header>
+    <Header className='mt-10'>
       <H1 className='text-center' variant='blue'>
         iPreach
       </H1>

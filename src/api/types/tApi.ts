@@ -1,10 +1,13 @@
-export interface ApiResponse<T> {
-  message: string
-  httpCode: number
-  response: T
+interface ApiResponse {
+  status: string
+  code: number
+  httpStatus: string
 }
 
-export interface ApiError {
+export interface ApiError extends ApiResponse {
   message: string
-  httpCode: number
+}
+
+export interface ApiSuccess<T> extends ApiResponse {
+  data: T
 }

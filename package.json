@@ -48,5 +48,12 @@
   },
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json"
+  },
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:8081",
+      "changeOrigin": true,
+      "secure": false
+    }
   }
 }

@@ -14,7 +14,7 @@ export const AppFooter = () => {
     setDark(!dark)
   }
   return (
-    <Footer className='bottom-0 flex h-[10vh] w-full items-center justify-around bg-slate-200 px-4 dark:bg-slate-800'>
+    <Footer className='flex h-16 w-full items-center justify-around bg-slate-200 px-4 dark:bg-slate-800'>
       <Span size='small' className='flex-1 text-center'>
         <AppText sentenceKey={FOOTER_ENTRY} />
       </Span>

@@ -2,35 +2,33 @@ import { VariantProps, cva } from 'class-variance-authority'
 import { ComponentProps, FC, forwardRef } from 'react'
 import { cn } from '../../../utils/tailwindUtils'
 
-const mainClasses = {
+const summaryClasses = {
   variants: {
     variant: {
       default: '',
-      colored: '',
     },
     size: {
       default: '',
     },
   },
 }
-
-const mainVariants = cva('grow', {
-  ...mainClasses,
+const summaryVariants = cva('', {
+  ...summaryClasses,
   defaultVariants: {
     variant: 'default',
     size: 'default',
   },
 })
 
-interface MainProps
-  extends ComponentProps<'main'>,
-    VariantProps<typeof mainVariants> {}
+interface SummaryProps
+  extends ComponentProps<'summary'>,
+    VariantProps<typeof summaryVariants> {}
 
-export const Main: FC<MainProps> = forwardRef<HTMLElement, MainProps>(
+export const Summary: FC<SummaryProps> = forwardRef<HTMLElement, SummaryProps>(
   ({ className, size, variant, ...props }, ref) => (
-    <main
+    <summary
       ref={ref}
-      className={cn(mainVariants({ variant, size, className }))}
+      className={cn(summaryVariants({ variant, size, className }))}
       {...props}
     />
   )

@@ -1,18 +1,14 @@
-import { useQuery, UseQueryOptions } from '@tanstack/react-query'
-import { ApiResponse } from '../../api/types/tApi'
-import { Location } from '../tLocations'
+import { useQuery } from '@tanstack/react-query'
 import { getLocations } from '../service/locationsService'
-import { AxiosResponse } from 'axios'
+import { Location } from '../tLocations'
+import { AppUseQueryProps } from '../../common/types/tQueries'
 
 const LOCATIONS_KEY = 'locations'
 
-export const useGetLocationsQuery = ({
-  props,
-}: {
-  props?: UseQueryOptions<AxiosResponse<ApiResponse<Location[]>>>
-} = {}) =>
+export const useGetLocationsQuery = (props?: AppUseQueryProps<Location[]>) =>
   useQuery({
     ...props,
     queryKey: [LOCATIONS_KEY],
     queryFn: getLocations,
+    select: (data) => data.data.data,
   })

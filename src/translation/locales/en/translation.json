@@ -5,5 +5,8 @@
   "login": "Log in with your phone number",
   "login-button": "Let's go!",
   "footer": "iPreach 2025 | All rights reserved",
-  "location-placeholder": "Location"
+  "location-placeholder": "Location",
+  "user-not-found": "User not found",
+  "available-shifts": "{{slots}} available shifts",
+  "select-location": "Select a location to see available shifts"
 }

@@ -5,6 +5,10 @@ interface CalendarTile {
   view: 'month' | 'year' | 'decade' | 'century'
 }
 
+interface AppCalendarProps {
+  onClickDay?: (date: Date) => void
+}
+
 const today = new Date()
 today.setHours(0, 0, 0, 0)
 
@@ -14,12 +18,13 @@ const tileClassName = ({}: CalendarTile) => {
   return styles
 }
 
-export const AppCalendar = () => {
+export const AppCalendar = ({ onClickDay }: AppCalendarProps) => {
   return (
     <>
       <Calendar
         className='mx-auto w-full text-center uppercase'
         tileClassName={tileClassName}
+        onClickDay={onClickDay}
       />
     </>
   )

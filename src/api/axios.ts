@@ -4,7 +4,7 @@ import { LOGIN_ROUTE } from '../login/components/Login'
 import queryString from 'query-string'
 
 export const AUTH_HEADER_KEY = 'x-auth-token'
-const publicUrls = ['/auth/login']
+const publicUrls = ['']
 
 export const appAxios = axios.create({
   baseURL: `${import.meta.env.VITE_API_PATH}/api/v1`,

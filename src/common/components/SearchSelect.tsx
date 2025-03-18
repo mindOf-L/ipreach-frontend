@@ -13,8 +13,8 @@ import { ChevronDown } from 'lucide-react'
 import { useDetectClickOutside } from '../hooks/useDetectClickOutside'
 
 interface SearchSelectProps {
-  onInputChange: (e: ChangeEvent<HTMLInputElement>) => unknown
-  onSelect: (option: Option) => unknown
+  onInputChange?: (e: ChangeEvent<HTMLInputElement>) => unknown
+  onSelect?: (option: Option) => unknown
   options?: Option[]
   placeholder?: string
   inputDefault?: string
@@ -39,13 +39,13 @@ export const SearchSelect = forwardRef<SearchSelectRef, SearchSelectProps>(
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
       setInputValue(e.target.value)
-      onInputChange(e)
+      onInputChange && onInputChange(e)
     }
 
     const handleSelect = (option: Option) => () => {
       setInputValue(option.label)
       setShowOptions(false)
-      onSelect(option)
+      onSelect && onSelect(option)
     }
 
     useDetectClickOutside({
@@ -71,13 +71,13 @@ export const SearchSelect = forwardRef<SearchSelectRef, SearchSelectProps>(
         <ChevronDown className='text-primary-8 pointer-events-none absolute right-0' />
         {(options?.length || 0) > 0 && (
           <Ul
-            className={`bg-primary-2 dark:bg-primary-8 absolute z-10 ${!showOptions && 'hidden'} top-11`}
+            className={`absolute z-10 bg-slate-100 dark:bg-slate-900 ${!showOptions && 'hidden'} top-11 w-full rounded-md border-1 border-slate-900 px-2 dark:border-slate-100`}
           >
             {options?.map((o) => (
               <Li
                 key={o.value}
                 onClick={handleSelect(o)}
-                className='hover:bg-secondary-2 dark:hover:bg-secondary-4 rounded-none first:rounded-t-md last:rounded-b-md'
+                className='my-1 rounded-none first:rounded-t-md last:rounded-b-md hover:bg-slate-200 dark:hover:bg-slate-800'
               >
                 {o.label}
               </Li>

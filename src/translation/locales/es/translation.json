@@ -1,3 +1,12 @@
 {
-  "welcome": "Bienvenido a iPreach, {{name}}"
+  "welcome": "Bienvenido a iPreach, {{name}}",
+  "username-label": "Número de teléfono",
+  "password-label": "Contraseña",
+  "login": "Inicia sesión con tu número de teléfono",
+  "login-button": "¡Vamos!",
+  "footer": "iPreach 2025 | Todos los derechos reservados",
+  "location-placeholder": "Ubicación",
+  "user-not-found": "Usuario no encontrado",
+  "available-shifts": "{{slots}} turnos disponibles",
+  "select-location": "Selecciona una ubicación para ver los turnos disponibles"
 }

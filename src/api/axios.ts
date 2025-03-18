@@ -12,20 +12,24 @@ export const appAxios = axios.create({
     queryString.stringify(params, { arrayFormat: 'none' }),
 })
 
-appAxios.interceptors.request.use(
-  (config) => {
-    console.log(document.cookie)
-    config.withCredentials =
-      config.url !== undefined && !publicUrls.includes(config.url)
-    return config
-  },
+appAxios.interceptors.request.use((config) => {
+  config.withCredentials =
+    config.url !== undefined && !publicUrls.includes(config.url)
+  return config
+})
+appAxios.interceptors.response.use(
+  (response) => response,
   (error: AxiosError) => {
     if (error.response === undefined) {
       toast.error('Error del servidor. Inténtelo de nuevo más tarde.')
       return
     }
 
-    if (error.status === 403 || error.status === 401) {
+    if (
+      error.status === 403 ||
+      error.status === 401 ||
+      error.message === 'Invalid token'
+    ) {
       window.location.replace(LOGIN_ROUTE)
       return
     }

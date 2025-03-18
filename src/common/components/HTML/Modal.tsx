@@ -3,9 +3,10 @@ import { Div } from './Div'
 import { Button } from './Button'
 import { Nav } from './Nav'
 import { Span } from './Span'
-import { useDetectClickOutside } from './hooks/useDetectClickOutside'
+
 import { useRef } from 'react'
 import { XIcon } from 'lucide-react'
+import { useDetectClickOutside } from '../../hooks/useDetectClickOutside'
 
 export const MODAL_KEY = 'modal'
 export interface ModalProps {

@@ -7,6 +7,9 @@ export interface User {
   refreshExpires: string
   roles: Role[]
   tokenExpires: string
+  shiftUserRole: ShiftUserRole
 }
 
 type Role = 'ROLE_ADMIN' | 'ROLE_USER'
+
+export type ShiftUserRole = 'OVERSEER' | 'AUXILIAR' | 'PARTICIPANT'

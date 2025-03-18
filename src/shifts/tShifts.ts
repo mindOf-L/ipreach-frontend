@@ -1,3 +1,5 @@
+import { Assignment } from '../assignments/tAssignments'
+
 export interface Shift {
   id: number
   dateTimeFrom: Date
@@ -7,4 +9,5 @@ export interface Shift {
   slotsOpened: number
   overseer: string
   brothers: string[]
+  assignments: Assignment
 }

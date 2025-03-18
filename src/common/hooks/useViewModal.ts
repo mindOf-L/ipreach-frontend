@@ -1,5 +1,5 @@
 import { useQueryClient } from '@tanstack/react-query'
-import { VIEW_MODAL_KEY, ViewModalProps } from '../ViewModal'
+import { ViewModalProps, VIEW_MODAL_KEY } from '../components/ViewModal'
 
 export const useViewModal = () => {
   const queryClient = useQueryClient()

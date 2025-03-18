@@ -9,6 +9,7 @@ import { Shift } from '../tShifts'
 import { formatDateShort } from '../../utils/dateUtils'
 import { useAppTranslation } from '../../translation/hooks/useAppTranslation'
 import { AVAILABLE_SHIFTS_ENTRY } from '../../translation/tTranslation'
+import { useExtractParticipants } from '../hooks/useExtractParticipants'
 
 interface TurnInfoCardParams {
   shift: Shift
@@ -19,6 +20,8 @@ export const ShiftInfoCard = ({ shift }: TurnInfoCardParams) => {
     sentenceKey: AVAILABLE_SHIFTS_ENTRY,
     dynamicValues: { slots: shift.slotsAvailable },
   })
+
+  const { overseer, auxiliar, participants } = useExtractParticipants(shift)
 
   return (
     <Li
@@ -36,11 +39,13 @@ export const ShiftInfoCard = ({ shift }: TurnInfoCardParams) => {
         </Summary>
 
         <Ul className='font-semibold'>
-          <Li>Superintendente</Li>
-          <Li>Auxiliar</Li>
-          <Li className='border-t-2 font-thin'>Hermano 1</Li>
-          <Li className='font-thin'>Hermano 2</Li>
-          <Li className='font-thin'>Hermano 3</Li>
+          <Li>{overseer?.name}</Li>
+          <Li className='border-b-2'>{auxiliar?.name}</Li>
+          {participants.map((p) => (
+            <Li key={p.id} className='font-thin'>
+              {p.name}
+            </Li>
+          ))}
         </Ul>
       </Details>
     </Li>

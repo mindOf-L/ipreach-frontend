@@ -1,4 +1,3 @@
-import { AppLoading } from '../../common/components/AppLoading'
 import { Option, SearchSelect } from '../../common/components/SearchSelect'
 import { useAppTranslation } from '../../translation/hooks/useAppTranslation'
 import { LOCATION_PLACEHOLDER_ENTRY } from '../../translation/tTranslation'

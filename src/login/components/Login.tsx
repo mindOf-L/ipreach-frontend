@@ -1,4 +1,3 @@
-import { MouseEvent } from 'react'
 import { Button } from '../../common/components/HTML/Button'
 import { Form } from '../../common/components/HTML/Form'
 import { H3 } from '../../common/components/HTML/H3'

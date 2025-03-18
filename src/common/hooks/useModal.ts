@@ -1,5 +1,5 @@
 import { useQueryClient } from '@tanstack/react-query'
-import { MODAL_KEY, ModalProps } from '../Modal'
+import { ModalProps, MODAL_KEY } from '../components/HTML/Modal'
 
 export const useModal = () => {
   const queryClient = useQueryClient()

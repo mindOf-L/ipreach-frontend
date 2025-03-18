@@ -4,7 +4,7 @@ import { Main } from '../../common/components/HTML/Main'
 import { LocationSelect } from '../../locations/components/LocationSelect'
 import { useState } from 'react'
 import { Location } from '../../locations/tLocations'
-import { ShiftList } from '../../turns/components/ShiftList'
+import { ShiftList } from '../../shifts/components/ShiftList'
 
 export const HOME_ROUTE = '/'
 

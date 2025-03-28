@@ -4,7 +4,9 @@ import { Login, LOGIN_ROUTE } from './login/components/Login'
 import { Home, HOME_ROUTE } from './home/components/Home'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import { ProtectedRoute } from './routes/components/ProtectedRoute'
+import { Protected } from './routes/components/Protected'
+import { RouteNotFound } from './routes/components/RouteNotFound'
+import { fallbackUser } from './users/tUser'
 
 const queryClient = new QueryClient()
 
@@ -14,13 +16,10 @@ function App() {
       <Routes>
         <Route
           path={HOME_ROUTE}
-          element={
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
-          }
+          element={<Protected element={<Home user={fallbackUser} />} />}
         />
         <Route path={LOGIN_ROUTE} element={<Login />} />
+        <Route path='*' element={<RouteNotFound />} />
       </Routes>
       <AppFooter />
       <ReactQueryDevtools initialIsOpen={false} />

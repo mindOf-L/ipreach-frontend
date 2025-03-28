@@ -2,13 +2,14 @@ import { AppCalendar } from '../../calendar/AppCalendar'
 import { Div } from '../../common/components/HTML/Div'
 import { Main } from '../../common/components/HTML/Main'
 import { LocationSelect } from '../../locations/components/LocationSelect'
-import { useState } from 'react'
+import { FC, useState } from 'react'
 import { Location } from '../../locations/tLocations'
 import { ShiftList } from '../../shifts/components/ShiftList'
+import { ProtectedElement } from '../../routes/components/Protected'
 
 export const HOME_ROUTE = '/'
 
-export const Home = () => {
+export const Home: FC<ProtectedElement> = () => {
   const [location, setLocation] = useState<Location>()
   const handleChangeLocation = (newLocation: Location) =>
     setLocation(newLocation)

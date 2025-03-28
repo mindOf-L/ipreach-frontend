@@ -1,7 +1,7 @@
 import axios, { AxiosError } from 'axios'
 import { toast } from 'sonner'
-import { LOGIN_ROUTE } from '../login/components/Login'
 import queryString from 'query-string'
+import { ApiError } from './types/tApi'
 
 export const AUTH_HEADER_KEY = 'x-auth-token'
 const publicUrls = ['']
@@ -19,18 +19,27 @@ appAxios.interceptors.request.use((config) => {
 })
 appAxios.interceptors.response.use(
   (response) => response,
-  (error: AxiosError) => {
-    if (error.response === undefined) {
-      toast.error('Error del servidor. Inténtelo de nuevo más tarde.')
+  (error: AxiosError<ApiError>) => {
+    const apiError = error.response?.data
+
+    if (!apiError) {
+      toast.error('Could not connect to the server. Contact administrator.')
+      return
+    }
+
+    if (apiError.code === 500) {
+      toast.error('Server internal error. Contact administrator.')
       return
     }
 
     if (
-      error.status === 403 ||
-      error.status === 401 ||
-      error.message === 'Invalid token'
+      apiError.code === 403 ||
+      apiError.code === 401 ||
+      apiError.message === 'Token invalid'
     ) {
-      window.location.replace(LOGIN_ROUTE)
+      toast.error(
+        'Authentication needed to access this resource. Please login again.'
+      )
       return
     }
 

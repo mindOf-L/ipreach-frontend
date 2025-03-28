@@ -1,12 +1,15 @@
 {
   "welcome": "Welcome to iPreach, {{name}}",
-  "username-label": "Phone number",
+  "username-label": "Phone number or email",
   "password-label": "Password",
-  "login": "Log in with your phone number",
+  "login": "Log in",
   "login-button": "Let's go!",
   "footer": "iPreach 2025 | All rights reserved",
   "location-placeholder": "Location",
   "user-not-found": "User not found",
-  "available-shifts": "{{slots}} available shifts",
-  "select-location": "Select a location to see available shifts"
+  "available-shifts": "Available slots: {{slots}}",
+  "select-location": "Select a location to see available shifts",
+  "route-not-found": "Route not found",
+  "go-to-home": "Go to home",
+  "go-to-login": "Go to login"
 }

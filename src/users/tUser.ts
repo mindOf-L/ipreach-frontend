@@ -13,3 +13,15 @@ export interface User {
 type Role = 'ROLE_ADMIN' | 'ROLE_USER'
 
 export type ShiftUserRole = 'OVERSEER' | 'AUXILIAR' | 'PARTICIPANT'
+
+export const fallbackUser: User = {
+  approved: false,
+  email: '',
+  enabled: false,
+  id: 0,
+  name: '',
+  refreshExpires: '',
+  roles: [],
+  tokenExpires: '',
+  shiftUserRole: 'PARTICIPANT',
+}

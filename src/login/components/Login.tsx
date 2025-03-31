@@ -32,7 +32,6 @@ export const Login = () => {
   return (
     <>
       <Hero />
-      {import.meta.env.VITE_API_PATH}
       <Main className='flex flex-col justify-center'>
         <Form className='mx-auto h-full' onSubmit={handleLogin}>
           <H3 className='self-start'>

@@ -21,11 +21,8 @@ export const PasswordToggleInput = ({ ...props }) => {
           {...props}
         />
         <Button className='w-10' onClick={handleTogglePassword}>
-          {isPassword ? (
-            <EyeIcon className='h-4' />
-          ) : (
-            <EyeOff className='h-4' />
-          )}
+          {isPassword && <EyeIcon className='h-4' />}
+          {!isPassword && <EyeOff className='h-4' />}
         </Button>
       </Div>
     </>

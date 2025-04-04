@@ -14,9 +14,9 @@ interface ProtectedParent {
 }
 
 export const Protected: FC<ProtectedParent> = ({ element }) => {
-  const { data: user, isLoading } = useGetMyUserQuery()
+  const { data: user, isFetching } = useGetMyUserQuery()
 
-  if (isLoading) return <AppLoading />
+  if (isFetching) return <AppLoading />
 
   if (!user) return <Navigate to={LOGIN_ROUTE} />
 

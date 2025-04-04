@@ -15,13 +15,13 @@ export const AppFooter = () => {
   }
   return (
     <Footer className='flex h-16 w-full items-center justify-around bg-slate-200 px-4 dark:bg-slate-800'>
-      <Span size='small' className='flex-1 text-center'>
-        <AppText sentenceKey={FOOTER_ENTRY} />
-      </Span>
-      <Button onClick={handleClick}>
+      <Button onClick={handleClick} className='w-10'>
         {dark && <Sun />}
         {dark || <Moon />}
       </Button>
+      <Span size='small' className='flex-1 text-center'>
+        <AppText sentenceKey={FOOTER_ENTRY} />
+      </Span>
     </Footer>
   )
 }

@@ -7,7 +7,8 @@ const buttonClasses = {
     variant: {
       default: '',
       colored:
-        'dark:bg-sky-200 bg-sky-700 dark:text-slate-900 text-slate-100 w-full rounded-md border hover:dark:bg-sky-300 hover:bg-sky-600',
+        'dark:bg-sky-200 bg-sky-700 dark:text-slate-900 text-slate-100 hover:dark:bg-sky-300 hover:bg-sky-600',
+      disabled: 'opacity-50 cursor-not-allowed bg-slate-500',
     },
     size: {
       default: 'min-h-10',
@@ -15,7 +16,7 @@ const buttonClasses = {
   },
 }
 
-const buttonVariants = cva('transition-all duration-300', {
+const buttonVariants = cva('w-full rounded-md transition-all duration-300', {
   ...buttonClasses,
   defaultVariants: {
     variant: 'default',

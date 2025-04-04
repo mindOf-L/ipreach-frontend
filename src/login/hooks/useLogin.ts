@@ -6,7 +6,7 @@ import { toast } from 'sonner'
 
 export const useLogin = () => {
   const navigate = useNavigate()
-  const { mutate } = useLoginMutation({
+  const { mutate, isPending } = useLoginMutation({
     onSuccess: () => navigate(HOME_ROUTE),
     onError: () => toast.error('Error al hacer login'),
   })
@@ -22,5 +22,5 @@ export const useLogin = () => {
     mutate(body)
   }
 
-  return { handleLogin }
+  return { handleLogin, isPending }
 }

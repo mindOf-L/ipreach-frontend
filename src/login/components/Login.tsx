@@ -27,7 +27,7 @@ export const Login = () => {
     sentenceKey: PASSWORD_LABEL_ENTRY,
   })
 
-  const { handleLogin } = useLogin()
+  const { handleLogin, isPending } = useLogin()
 
   return (
     <>
@@ -45,7 +45,10 @@ export const Login = () => {
             {passwordLabel}
           </Label>
           <PasswordToggleInput id='password' name='password' required />
-          <Button variant='colored'>
+          <Button
+            variant={isPending ? 'disabled' : 'colored'}
+            disabled={isPending}
+          >
             <AppText sentenceKey={LOGIN_BUTTON_ENTRY} />
           </Button>
         </Form>

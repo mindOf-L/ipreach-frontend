@@ -23,7 +23,6 @@ export const Protected: FC<ProtectedParent> = ({
 
   if (!me) return <ProtectedFromQuery element={element} fallback={fallback} />
 
-  console.log('from state')
   return cloneElement(element, { me })
 }
 
@@ -33,6 +32,6 @@ const ProtectedFromQuery: FC<ProtectedParent> = ({ element, fallback }) => {
   if (isFetching) return <AppLoading />
 
   if (!me) return fallback
-  console.log('from query')
+
   return cloneElement(element, { me })
 }

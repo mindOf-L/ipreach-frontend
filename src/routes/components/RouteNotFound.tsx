@@ -9,7 +9,7 @@ import {
 } from '../../translation/tTranslation'
 import { LOGIN_ROUTE } from '../../login/components/Login'
 import { AppNavLink } from '../../navigation/components/AppNavLink'
-import { useGetMyUserQuery } from '../../users/hooks/useUsersQueries'
+import { Protected } from './Protected'
 
 export const RouteNotFound = () => {
   const routeNotFound = useAppTranslation({
@@ -18,13 +18,13 @@ export const RouteNotFound = () => {
   const goToHome = useAppTranslation({ sentenceKey: GO_TO_HOME_ENTRY })
   const goToLogin = useAppTranslation({ sentenceKey: GO_TO_LOGIN_ENTRY })
 
-  const { data: cacheUser } = useGetMyUserQuery()
-
   return (
     <Main className='my-20 grid w-full gap-10 text-center'>
       <H1>{routeNotFound}</H1>
-      {cacheUser && <AppNavLink to={HOME_ROUTE}>{goToHome}</AppNavLink>}
-      {!cacheUser && <AppNavLink to={LOGIN_ROUTE}>{goToLogin}</AppNavLink>}
+      <Protected
+        element={<AppNavLink to={HOME_ROUTE}>{goToHome}</AppNavLink>}
+        fallback={<AppNavLink to={LOGIN_ROUTE}>{goToLogin}</AppNavLink>}
+      />
     </Main>
   )
 }

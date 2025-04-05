@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route
           path={HOME_ROUTE}
-          element={<Protected element={<Home user={fallbackUser} />} />}
+          element={<Protected element={<Home me={fallbackUser} />} />}
         />
         <Route path={LOGIN_ROUTE} element={<Login />} />
         <Route path='*' element={<RouteNotFound />} />

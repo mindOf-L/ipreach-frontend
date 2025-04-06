@@ -10,6 +10,9 @@ RUN pnpm install --frozen-lockfile
 
 COPY . .
 
+ARG VITE_API_PATH
+ENV VITE_API_PATH=${VITE_API_PATH}
+
 RUN pnpm run build
 
 FROM node:22-slim AS production

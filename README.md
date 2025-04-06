@@ -1,6 +1,9 @@
-Frontend for iPreach
+# Frontend for iPreach
 
-To run the project locally
+To run the project locally:
 
-pnpm install
-pnpm run dev
+`pnpm install`
+
+`pnpm run dev`
+
+Visit [http://localhost:3000]

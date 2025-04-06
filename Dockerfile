@@ -2,7 +2,7 @@ FROM node:22-slim AS build
 
 WORKDIR /app
 
-RUN corepack enable && corepack prepare pnpm@10.6.4 --activate
+RUN corepack enable && corepack prepare pnpm@10.7.1 --activate
 
 COPY package.json pnpm-lock.yaml* ./
 
